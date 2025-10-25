@@ -10,13 +10,31 @@
           <theme>@style/Theme.AndroidUSBCamApp</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/xml/usb_device_filter.xml">
+        <config>
+          <theme>@style/Theme.AndroidUSBCamApp</theme>
+        </config>
+      </layout>
     </layouts>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf5fe317-5ccd-4888-b81e-35105113f8eb" name="Changes" comment="feat: Add basic camera preview functionality&#10;&#10;Adds the initial implementation for a camera preview screen.&#10;&#10;- Creates `CameraActivity` to handle camera logic, including permission requests and binding the camera lifecycle.&#10;- Adds `activity_camera.xml` layout with a `PreviewView` to display the camera feed.&#10;- Updates `AndroidManifest.xml` to declare camera and USB permissions, define required hardware features, and set `CameraActivity` as the launcher activity.&#10;- Adds CameraX dependencies and the JitPack repository to `build.gradle.kts` and `settings.gradle.kts`.&#10;- Upgrades Java and Kotlin versions to 17." />
+    <list default="true" id="cf5fe317-5ccd-4888-b81e-35105113f8eb" name="Changes" comment="feat: Add basic camera preview functionality&#10;&#10;Adds the initial implementation for a camera preview screen.&#10;&#10;- Creates `CameraActivity` to handle camera logic, including permission requests and binding the camera lifecycle.&#10;- Adds `activity_camera.xml` layout with a `PreviewView` to display the camera feed.&#10;- Updates `AndroidManifest.xml` to declare camera and USB permissions, define required hardware features, and set `CameraActivity` as the launcher activity.&#10;- Adds CameraX dependencies and the JitPack repository to `build.gradle.kts` and `settings.gradle.kts`.&#10;- Upgrades Java and Kotlin versions to 17.">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidusbcamapp/USBCameraService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/usb_device_filter.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidusbcamapp/CameraActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidusbcamapp/CameraActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_camera.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_camera.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,8 +69,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="layoutResourceFile" />
+        <option value="resourceFile" />
+        <option value="Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -190,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761402210753</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: Add basic camera preview functionality&#10;&#10;Adds the initial implementation for a camera preview screen.&#10;&#10;- Creates `CameraActivity` to handle camera logic, including permission requests and binding the camera lifecycle.&#10;- Adds `activity_camera.xml` layout with a `PreviewView` to display the camera feed.&#10;- Updates `AndroidManifest.xml` to declare camera and USB permissions, define required hardware features, and set `CameraActivity` as the launcher activity.&#10;- Adds CameraX dependencies and the JitPack repository to `build.gradle.kts` and `settings.gradle.kts`.&#10;- Upgrades Java and Kotlin versions to 17.">
+      <option name="closed" value="true" />
+      <created>1761402254671</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1761402254671</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

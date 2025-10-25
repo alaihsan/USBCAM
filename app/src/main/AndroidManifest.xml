@@ -21,6 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidUSBCamApp"
         tools:targetApi="31">
+        <service android:name=".USBCameraService" />
 
         <!-- Camera Activity -->
         <activity
@@ -30,8 +31,17 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
 
+            <!-- ✅ USB Device Filter -->
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                android:resource="@xml/usb_device_filter" />
+        </activity>
+        <service android:name=".USBCameraService" />
     </application>
 
 </manifest>

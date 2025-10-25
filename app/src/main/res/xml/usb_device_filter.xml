@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Filter untuk USB Video Class devices (umum untuk capture cards) -->
+    <usb-device vendor-id="1234" product-id="5678" />
+    <!-- Kita akan adjust vendor-id & product-id nanti -->
+</resources>
