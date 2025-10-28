@@ -21,19 +21,26 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf5fe317-5ccd-4888-b81e-35105113f8eb" name="Changes" comment="feat: Add basic camera preview functionality&#10;&#10;Adds the initial implementation for a camera preview screen.&#10;&#10;- Creates `CameraActivity` to handle camera logic, including permission requests and binding the camera lifecycle.&#10;- Adds `activity_camera.xml` layout with a `PreviewView` to display the camera feed.&#10;- Updates `AndroidManifest.xml` to declare camera and USB permissions, define required hardware features, and set `CameraActivity` as the launcher activity.&#10;- Adds CameraX dependencies and the JitPack repository to `build.gradle.kts` and `settings.gradle.kts`.&#10;- Upgrades Java and Kotlin versions to 17.">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidusbcamapp/USBCameraService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/usb_device_filter.xml" afterDir="false" />
+    <list default="true" id="cf5fe317-5ccd-4888-b81e-35105113f8eb" name="Changes" comment="feat: Add USB service and status UI&#10;&#10;Introduces a `USBCameraService` to simulate handling USB device connections and adds a status overlay to the UI.&#10;&#10;- Creates `USBCameraService` to simulate detecting and connecting to a virtual PS4 capture card. The service logs the connection process and simulates a 60fps video stream.&#10;- Updates `activity_camera.xml` with a status overlay containing a `TextView` (`tvStatus`) and a &quot;Connect&quot; `Button` (`btnConnectUSB`).&#10;- Modifies `CameraActivity` to:&#10;    - Start and bind to the `USBCameraService`.&#10;    - Manage UI elements for displaying status and simulating a connection.&#10;    - Update the status text throughout the camera and USB connection lifecycle.&#10;- Adds `usb_device_filter.xml` to define a filter for USB devices (with placeholder vendor/product IDs).&#10;- Updates `AndroidManifest.xml` to:&#10;    - Register the `USBCameraService`.&#10;    - Add an intent filter for `USB_DEVICE_ATTACHED` to the `CameraActivity`.">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/androidusbcamapp/CameraActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/androidusbcamapp/CameraActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_camera.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_camera.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,9 +89,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="34YlVLRK7NCXZ4huGkN5T9q2Heo" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -97,6 +104,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
@@ -218,25 +226,34 @@
       <option name="project" value="LOCAL" />
       <updated>1761402254671</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: Add USB service and status UI&#10;&#10;Introduces a `USBCameraService` to simulate handling USB device connections and adds a status overlay to the UI.&#10;&#10;- Creates `USBCameraService` to simulate detecting and connecting to a virtual PS4 capture card. The service logs the connection process and simulates a 60fps video stream.&#10;- Updates `activity_camera.xml` with a status overlay containing a `TextView` (`tvStatus`) and a &quot;Connect&quot; `Button` (`btnConnectUSB`).&#10;- Modifies `CameraActivity` to:&#10;    - Start and bind to the `USBCameraService`.&#10;    - Manage UI elements for displaying status and simulating a connection.&#10;    - Update the status text throughout the camera and USB connection lifecycle.&#10;- Adds `usb_device_filter.xml` to define a filter for USB devices (with placeholder vendor/product IDs).&#10;- Updates `AndroidManifest.xml` to:&#10;    - Register the `USBCameraService`.&#10;    - Add an intent filter for `USB_DEVICE_ATTACHED` to the `CameraActivity`.">
+      <option name="closed" value="true" />
+      <created>1761403407051</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1761403407051</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial project setup" />
     <MESSAGE value="feat: Add basic camera preview functionality&#10;&#10;Adds the initial implementation for a camera preview screen.&#10;&#10;- Creates `CameraActivity` to handle camera logic, including permission requests and binding the camera lifecycle.&#10;- Adds `activity_camera.xml` layout with a `PreviewView` to display the camera feed.&#10;- Updates `AndroidManifest.xml` to declare camera and USB permissions, define required hardware features, and set `CameraActivity` as the launcher activity.&#10;- Adds CameraX dependencies and the JitPack repository to `build.gradle.kts` and `settings.gradle.kts`.&#10;- Upgrades Java and Kotlin versions to 17." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Add basic camera preview functionality&#10;&#10;Adds the initial implementation for a camera preview screen.&#10;&#10;- Creates `CameraActivity` to handle camera logic, including permission requests and binding the camera lifecycle.&#10;- Adds `activity_camera.xml` layout with a `PreviewView` to display the camera feed.&#10;- Updates `AndroidManifest.xml` to declare camera and USB permissions, define required hardware features, and set `CameraActivity` as the launcher activity.&#10;- Adds CameraX dependencies and the JitPack repository to `build.gradle.kts` and `settings.gradle.kts`.&#10;- Upgrades Java and Kotlin versions to 17." />
+    <MESSAGE value="feat: Add USB service and status UI&#10;&#10;Introduces a `USBCameraService` to simulate handling USB device connections and adds a status overlay to the UI.&#10;&#10;- Creates `USBCameraService` to simulate detecting and connecting to a virtual PS4 capture card. The service logs the connection process and simulates a 60fps video stream.&#10;- Updates `activity_camera.xml` with a status overlay containing a `TextView` (`tvStatus`) and a &quot;Connect&quot; `Button` (`btnConnectUSB`).&#10;- Modifies `CameraActivity` to:&#10;    - Start and bind to the `USBCameraService`.&#10;    - Manage UI elements for displaying status and simulating a connection.&#10;    - Update the status text throughout the camera and USB connection lifecycle.&#10;- Adds `usb_device_filter.xml` to define a filter for USB devices (with placeholder vendor/product IDs).&#10;- Updates `AndroidManifest.xml` to:&#10;    - Register the `USBCameraService`.&#10;    - Add an intent filter for `USB_DEVICE_ATTACHED` to the `CameraActivity`." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Add USB service and status UI&#10;&#10;Introduces a `USBCameraService` to simulate handling USB device connections and adds a status overlay to the UI.&#10;&#10;- Creates `USBCameraService` to simulate detecting and connecting to a virtual PS4 capture card. The service logs the connection process and simulates a 60fps video stream.&#10;- Updates `activity_camera.xml` with a status overlay containing a `TextView` (`tvStatus`) and a &quot;Connect&quot; `Button` (`btnConnectUSB`).&#10;- Modifies `CameraActivity` to:&#10;    - Start and bind to the `USBCameraService`.&#10;    - Manage UI elements for displaying status and simulating a connection.&#10;    - Update the status text throughout the camera and USB connection lifecycle.&#10;- Adds `usb_device_filter.xml` to define a filter for USB devices (with placeholder vendor/product IDs).&#10;- Updates `AndroidManifest.xml` to:&#10;    - Register the `USBCameraService`.&#10;    - Add an intent filter for `USB_DEVICE_ATTACHED` to the `CameraActivity`." />
   </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">
       <map>
         <entry key="com.example.androidusbcamapp">
           <value>
-            <CheckInfo lastCheckTimestamp="1761398527180" />
+            <CheckInfo lastCheckTimestamp="1761647093477" />
           </value>
         </entry>
         <entry key="com.example.androidusbcamapp.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1761398527180" />
+            <CheckInfo lastCheckTimestamp="1761647093477" />
           </value>
         </entry>
       </map>
